@@ -1,0 +1,7 @@
+[web]
+7dd20917-665c-4f1c-a90e-4afbd80222c8
+20260a21-b199-46c4-a272-6cb1c50902b6
+
+
+[web:vars]
+ansible_user=centos
