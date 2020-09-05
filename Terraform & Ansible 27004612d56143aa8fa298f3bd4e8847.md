@@ -1,5 +1,15 @@
 # Terraform & Ansible
 
+## 개요
+
+Kolla-Anisble을 사용해  Openstack train 버젼의 프라이빗 클라우드를 구축한 환경에서 진행하였습니다.
+
+Terraform을 사용해 인스턴스를 생성하고, 생성된 인스턴스에 Web 서비스를 구축하는 세미 프로젝트 입니다.
+
+포인트는 Terraform을 통해 생성된 인스턴스의 Floating-ip는 유동적으로 할당되기 때문에 Ansible을 사용하여 Web 서비스를 Deploy할 경우 인스턴스가 어떤 IP를 사용할지 모른다는 점입니다.
+
+이로인해 서비스 배포에 어려움이 생기거나 관리자가 일일히 인스턴스의 IP를 스태틱하게 확인하는 번거로움이 생깁니다. 만약 인스턴스의 수가 많아진다면 비효율적이므로 이 문제를 간편하게 해결 하기 위해 Ansible의 동적인벤토리를 사용하여 해결하였습니다.
+
 Terraform으로 인스턴스 배포할때 사용한 public key의 쌍 인 private key 를 가지고 있어야 합니다. 이 private key는 Ansible로 서비스를 배포할 때 인스턴스로의 ssh 접속을 위해 필요합니다. Provider인 Openstack의 사용자 RC파일은 오픈스택 대시보드에서 다운로드 받아 사용하면 됩니다.(현재 Repo에는 private key와 RC파일은 제외 시켜 놓았습니다)
 
 ## Goal
@@ -27,7 +37,7 @@ Ubuntu (controller) → provisioning → openstack VMs - web1,web2
 
 Ubuntu (controller) → deploy→ openstack - web1,web2 -httpd service
 
-![images/Untitled_Diagram.svg](images/Untitled_Diagram.svg)
+![Timages/Untitled_Diagram.svg](Timages/Untitled_Diagram.svg)
 
 ### Dynamic Inventory
 
@@ -58,11 +68,11 @@ Terraform 으로 프로비져닝 한 오픈스택 인스턴스의 Floating ip를
 
         openstack_inventory.py ⇒ 오픈스택 동적인벤토리
 
-        ![images/Untitled.png](images/Untitled.png)
+        ![Timages/Untitled.png](Timages/Untitled.png)
 
         앤서블, 테라폼 작업디렉토리
 
-        *동적인벤토리를 사용할때 *_inventory.py 인벤토리 파일을 수정하여 인벤토리의 그룹과 그룹변수를 동적으로 지정할 수 있다, 이번 경우에는 인스턴스의 아이디를 스태틱하게 읽어와 그룹화 하하고 그룹변수를 사용해 보았다.
+        *동적인벤토리를 사용할때 *_inventory.py 인벤토리 파일을 수정하여 인벤토리의 그룹과 그룹변수를 동적으로 지정할 수 있다, 이번 경우에는 인스턴스의 아이디를 스태틱하게 읽어와 그룹화 하고 그룹변수를 사용해 보았다.
 
         ```bash
         vi ansible.cfg
@@ -81,8 +91,10 @@ Terraform 으로 프로비져닝 한 오픈스택 인스턴스의 Floating ip를
 
 ## Result
 
-Code in github: [https://github.com/namhj94/terraform](https://github.com/namhj94/terraform)
+Code in github
 
-![images/Untitled%201.png](images/Untitled%201.png)
+[namhj94/Terraform-Ansible](https://github.com/namhj94/Terraform-Ansible)
 
-![images/Untitled%202.png](images/Untitled%202.png)
+![Timages/Untitled%201.png](Timages/Untitled%201.png)
+
+![Timages/Untitled%202.png](Timages/Untitled%202.png)
