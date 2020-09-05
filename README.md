@@ -37,7 +37,7 @@ Ubuntu (controller) → provisioning → openstack VMs - web1,web2
 
 Ubuntu (controller) → deploy→ openstack - web1,web2 -httpd service
 
-![Timages/Untitled_Diagram.svg](Timages/Untitled_Diagram.svg)
+![images/Untitled_Diagram.svg](images/Untitled_Diagram.svg)
 
 ### Dynamic Inventory
 
@@ -68,7 +68,7 @@ Terraform 으로 프로비져닝 한 오픈스택 인스턴스의 Floating ip를
 
         openstack_inventory.py ⇒ 오픈스택 동적인벤토리
 
-        ![Timages/Untitled.png](Timages/Untitled.png)
+        ![images/Untitled.png](images/Untitled.png)
 
         앤서블, 테라폼 작업디렉토리
 
@@ -95,6 +95,6 @@ Code in github
 
 [namhj94/Terraform-Ansible](https://github.com/namhj94/Terraform-Ansible)
 
-![Timages/Untitled%201.png](Timages/Untitled%201.png)
+![images/Untitled%201.png](images/Untitled%201.png)
 
-![Timages/Untitled%202.png](Timages/Untitled%202.png)
+![images/Untitled%202.png](images/Untitled%202.png)
