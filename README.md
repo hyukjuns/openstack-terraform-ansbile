@@ -90,11 +90,6 @@ Terraform 으로 프로비져닝 한 오픈스택 인스턴스의 Floating ip를
         ```
 
 ## Result
-
-Code in github
-
-[namhj94/Terraform-Ansible](https://github.com/namhj94/Terraform-Ansible)
-
 ![images/Untitled%201.png](images/Untitled%201.png)
 
 ![images/Untitled%202.png](images/Untitled%202.png)
